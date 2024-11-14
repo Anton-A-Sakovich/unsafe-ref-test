@@ -31,36 +31,42 @@
         stloc.0
 
         call int32& UnsafeRefTest.Program::Bar()
-        ldobj int32
-        call void [System.Console]System.Console::WriteLine(int32)
+        call void UnsafeRefTest.Program::DereferenceAndDisplay(int32&)
         
         call int32& UnsafeRefTest.Program::Bar()
-        ldobj int32
-        call void [System.Console]System.Console::WriteLine(int32)
+        call void UnsafeRefTest.Program::DereferenceAndDisplay(int32&)
         
         call int32& UnsafeRefTest.Program::Bar()
-        ldobj int32
-        call void [System.Console]System.Console::WriteLine(int32)
+        call void UnsafeRefTest.Program::DereferenceAndDisplay(int32&)
         
         call int32& UnsafeRefTest.Program::Bar()
-        ldobj int32
-        call void [System.Console]System.Console::WriteLine(int32)
+        call void UnsafeRefTest.Program::DereferenceAndDisplay(int32&)
 
         ldstr "--------------------------"
         call void [System.Console]System.Console::WriteLine(string)
 
         ldloc.0
+        call void UnsafeRefTest.Program::DereferenceAndDisplay(int32&)
+
+        ret
+    }
+
+    .method private hidebysig static void DereferenceAndDisplay(int32& pointer)
+    {
+        .maxstack 1
+
+        ldarg.0
         ldobj int32
         call void [System.Console]System.Console::WriteLine(int32)
 
         ret
     }
-    
+
     .method private hidebysig static int32& Foo() cil managed
     {
         .maxstack 1
 
-        .locals ([0] int32 x)
+        .locals ([0] int32)
 
         ldc.i4.2
         stloc 0
@@ -73,7 +79,7 @@
     {
         .maxstack 1
 
-        .locals ([0] int32 x)
+        .locals ([0] int32)
 
         ldc.i4.4
         stloc 0
