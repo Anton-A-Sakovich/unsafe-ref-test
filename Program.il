@@ -27,19 +27,19 @@
         
         .locals ([0] int32&)
         
-        call int32& UnsafeRefTest.Program::Foo()
+        call int32& UnsafeRefTest.Program::ReturnRefToLocal2()
         stloc.0
 
-        call int32& UnsafeRefTest.Program::Bar()
+        call int32& UnsafeRefTest.Program::ReturnRefToLocal4()
         call void UnsafeRefTest.Program::DereferenceAndDisplay(int32&)
         
-        call int32& UnsafeRefTest.Program::Bar()
+        call int32& UnsafeRefTest.Program::ReturnRefToLocal4()
         call void UnsafeRefTest.Program::DereferenceAndDisplay(int32&)
         
-        call int32& UnsafeRefTest.Program::Bar()
+        call int32& UnsafeRefTest.Program::ReturnRefToLocal4()
         call void UnsafeRefTest.Program::DereferenceAndDisplay(int32&)
         
-        call int32& UnsafeRefTest.Program::Bar()
+        call int32& UnsafeRefTest.Program::ReturnRefToLocal4()
         call void UnsafeRefTest.Program::DereferenceAndDisplay(int32&)
 
         ldstr "--------------------------"
@@ -62,7 +62,7 @@
         ret
     }
 
-    .method private hidebysig static int32& Foo() cil managed
+    .method private hidebysig static int32& ReturnRefToLocal2() cil managed
     {
         .maxstack 1
 
@@ -75,7 +75,7 @@
         ret
     }
     
-    .method private hidebysig static int32& Bar() cil managed
+    .method private hidebysig static int32& ReturnRefToLocal4() cil managed
     {
         .maxstack 1
 
